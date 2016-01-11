@@ -1,0 +1,274 @@
+@charset "utf-8";
+@media (max-width: 631px) {
+    html {
+        font-size: 123.24%
+    }
+}
+
+@media (max-width: 621px) {
+    html {
+        font-size: 121.28%
+    }
+}
+
+@media (max-width: 611px) {
+    html {
+        font-size: 119.32%
+    }
+}
+
+@media (max-width: 601px) {
+    html {
+        font-size: .58691rem
+    }
+}
+
+@media (max-width: 591px) {
+    html {
+        font-size: 117.38%
+    }
+}
+
+@media (max-width: 581px) {
+    html {
+        font-size: 113.46%
+    }
+}
+
+@media (max-width: 571px) {
+    html {
+        font-size: 111.52%
+    }
+}
+
+@media (max-width: 561px) {
+    html {
+        font-size: 109.56%
+    }
+}
+
+@media (max-width: 551px) {
+    html {
+        font-size: 107.6%
+    }
+}
+
+@media (max-width: 541px) {
+    html {
+        font-size: 105.66%
+    }
+}
+
+@media (max-width: 531px) {
+    html {
+        font-size: 103.7%
+    }
+}
+
+@media (max-width: 521px) {
+    html {
+        font-size: 101.74%
+    }
+}
+
+@media (max-width: 511px) {
+    html {
+        font-size: 99.8%
+    }
+}
+
+@media (max-width: 501px) {
+    html {
+        font-size: 97.84%
+    }
+}
+
+@media (max-width: 491px) {
+    html {
+        font-size: 95.88%
+    }
+}
+
+@media (max-width: 481px) {
+    html {
+        font-size: 93.94%
+    }
+}
+
+@media (max-width: 471px) {
+    html {
+        font-size: 91.98%
+    }
+}
+
+@media (max-width: 461px) {
+    html {
+        font-size: 90.02%
+    }
+}
+
+@media (max-width: 451px) {
+    html {
+        font-size: 88.08%
+    }
+}
+
+@media (max-width: 441px) {
+    html {
+        font-size: 86.12%
+    }
+}
+
+@media (max-width: 431px) {
+    html {
+        font-size: 84.16%
+    }
+}
+
+@media (max-width: 421px) {
+    html {
+        font-size: 82.22%
+    }
+}
+
+@media (max-width: 411px) {
+    html {
+        font-size: 80.26%
+    }
+}
+
+@media (max-width: 401px) {
+    html {
+        font-size: 78.32%
+    }
+}
+
+@media (max-width: 391px) {
+    html {
+        font-size: 76.48%
+    }
+}
+
+@media (max-width: 381px) {
+    html {
+        font-size: 73.8%
+    }
+}
+
+@media (max-width: 371px) {
+    html {
+        font-size: 72.46%
+    }
+}
+
+@media (max-width: 361px) {
+    html {
+        font-size: 70.50%
+    }
+}
+
+@media (max-width: 351px) {
+    html {
+        font-size: 68.54%
+    }
+}
+
+@media (max-width: 341px) {
+    html {
+        font-size: 66.4%
+    }
+}
+
+@media (max-width: 331px) {
+    html {
+        font-size: 64.64%;
+    }
+}
+
+@media (max-width: 321px) {
+    html {
+        font-size: 62.5%;
+    }
+}
+
+@media (max-width: 311px) {
+    html {
+        font-size: 60.74%;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #f2f2f2;
+}
+
+.paymode-tip {
+    margin: 1.4rem 0 0 1.2rem;
+    font-size: 1.4rem;
+    color: #8b8b8b;
+}
+
+.paymode {
+    background-color: #fff;
+    margin-top: .6rem;
+    position: relative;
+    height:20rem;
+}
+
+.paymode-list span:first-child {
+    float: left;
+    margin-left: 1.2rem;
+}
+
+.paymode-list span:last-child {
+    float: right;
+    margin-right: 1.5rem;
+    width: 2.4rem;
+    display: inline-block;
+    padding-top: 2rem;
+}
+
+.paymode-list {
+    position: absolute;
+    font-size: 1.6rem;
+    height: 5rem;
+    border: .1rem solid #e6e6e6;
+    line-height: 5rem;
+    width: 100%;
+}
+
+.paymode > div.paymode-list:nth-child(2) {
+    top: 5rem;
+}
+
+.paymode > div.paymode-list:nth-child(3) {
+    top: 10rem;
+}
+
+.paymode > div.paymode-list:nth-child(4) {
+    top: 15rem;
+}
+
+.paymode-list-btn:not(:first-child) {
+    margin-top: .2rem;
+}
+
+.paymode-list-btn {
+    width: 2.4rem;
+    display: block;
+    border-top: .2rem solid #c7c7cc;
+}
+
+.paymode-list.move-currdom {
+    border-top: .1rem solid #e6e6e6;
+    background-color: #fff;
+    width: 100%;
+    z-index: 1000;
+    color: #000;
+}
