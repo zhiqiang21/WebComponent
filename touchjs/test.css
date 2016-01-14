@@ -1,7 +1,62 @@
-.test{
-    width: 300px;
-    height: 400px;
-    background-color:#000;
-    color:#fff;
-    font-size:20px;
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.test {
+    color: #fff;
+    /*margin-top:20px;*/
+    height:350px;
+    font-size: 20px;
+}
+
+.test ul {
+    list-style: none;
+}
+
+.test li {
+    position: relative;
+    height: 40px;
+    border-top:1px solid #aeadad;
+    border-bottom:1px solid #aeadad;
+}
+
+/*.test li:after{*/
+    /*content:'div';*/
+    /*display: block;*/
+    /*border-top:1px solid #aeadad;*/
+    /*z-index:1000;*/
+/*}*/
+.test .del-btn {
+    position: absolute;
+    top:0;
+    right:0;
+    background-color:#ff4851;
+    width:60px;
+    height:40px;
+    line-height:40px;
+    text-align: center;
+    z-index:-100;
+}
+
+
+.test li div:first-child {
+    color: #000;
+    background-color:RGBA(254,254,254,1);
+    height:40px;
+    line-height:40px;
+}
+.move-btn{
+    color:#ff4851;
+    border: 1px solid #000;
+    height:35px;
+    float: right;
+    display:none;
+}
+.leave-btn{
+    transition:transform .3s ease-in;
+}
+.move-style{
+    z-index:1000;
+
 }

@@ -1,7 +1,16 @@
+/**
+ * TouchDirection
+ *
+ * @param e
+ * @returns {undefined}
+ */
 var TouchDirection = function(e) {
     var dateTime,
         startThat = {},
-        moveThat = {};
+        moveThat = {},
+        prevNext = {},
+        endThat = {};
+    var moveX, moveY, direForX, direForY, tempX, tempY, absTempX, absTempY, angleTouch;
 
     dateTime = new Date();
 
@@ -11,6 +20,10 @@ var TouchDirection = function(e) {
         startThat.startY = e.touches[0].pageY;
         this.startThat = startThat;
 
+        //初始化移动的初始坐标
+        prevNext.moveX = e.touches[0].pageX;
+        prevNext.moveY = e.touches[0].pageY;
+        this.prevNext = prevNext;
         return this;
     };
 
@@ -18,23 +31,43 @@ var TouchDirection = function(e) {
         moveX = e.touches[0].pageX;
         moveY = e.touches[0].pageY;
 
+        direForX = this.prevNext.moveX - moveX;
+        direForY = this.prevNext.moveY - moveY;
+
+        //记录上次移动的坐标
+        prevNext.moveX = moveX;
+        prevNext.moveY = moveY;
+        this.prevNext = prevNext;
+
         tempX = this.startThat.startX - moveX;
         tempY = this.startThat.startY - moveY;
+
         absTempX = Math.abs(tempX);
         absTempY = Math.abs(tempY);
         angleTouch = absTempX / absTempY;
 
+        //relativeDirc  相对初始左边    currDirc  当前移动方向
         if (tempX < 0 && angleTouch >= 1) {
-            //鼠标右滑动
-            moveThat.direction = 'right';
+            //相对起点鼠标右滑动
+            moveThat.relativeDirc = 'right';
+            if (direForX < 0) {
+                moveThat.currDirc = 'right';
+            } else {
+                moveThat.currDirc = 'left';
+            }
             moveThat.moveX = absTempX;
             this.moveThat = moveThat;
 
             return this;
         }
         if (tempX > 0 && angleTouch >= 1) {
-            //鼠标左滑动
-            moveThat.direction = 'left';
+            //相对起点鼠标左滑动
+            moveThat.relativeDirc = 'left';
+            if (direForX < 0) {
+                moveThat.currDirc = 'right';
+            } else {
+                moveThat.currDirc = 'left';
+            }
             moveThat.moveX = absTempX;
             this.moveThat = moveThat;
 
@@ -42,8 +75,13 @@ var TouchDirection = function(e) {
 
         }
         if (tempY > 0 && angleTouch < 1) {
-            //上滑
-            moveThat.direction = 'up';
+            //相对起点鼠标上滑
+            moveThat.relativeDirc = 'up';
+            if (direForY > 0) {
+                moveThat.currDirc = 'up';
+            } else {
+                moveThat.currDirc = 'down';
+            }
             moveThat.moveY = absTempY;
             this.moveThat = moveThat;
 
@@ -51,8 +89,13 @@ var TouchDirection = function(e) {
         }
 
         if (tempY < 0 && angleTouch < 1) {
-            //下滑
-            moveThat.direction = 'down';
+            //相对起点鼠标下滑
+            moveThat.relativeDirc = 'down';
+            if (direForY > 0) {
+                moveThat.currDirc = 'up';
+            } else {
+                moveThat.currDirc = 'down';
+            }
             moveThat.moveY = absTempY;
             this.moveThat = moveThat;
 
@@ -60,8 +103,12 @@ var TouchDirection = function(e) {
         }
     };
 
-    this.touchEndEven = function(){
-        this.startThat = null;
-        this.moveThat = null;
+    this.touchEndEven = function(e) {
+        var endX, endY, direction, tempX, tempY;
+
+        //事件结束的位移和方向即为最后的 moveThat
+        this.endThat = this.moveThat;
+
+        return this;
     };
 };

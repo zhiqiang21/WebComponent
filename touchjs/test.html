@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
@@ -9,8 +10,43 @@
     <script src="zepto.js"></script>
     <script src='touch.js'></script>
 </head>
+
 <body>
-    <div class="test">测试字体的</div>
+    <div class="test" node-type="test">
+        <ul>
+            <li node-type="move-node">
+                <div node-type='node-co'>
+                    <span>测试测试1</span>
+                    <span class="move-btn">移动</span>
+                </div>
+                <div class="del-btn" node-type="del-btn">移除1</div>
+            </li>
+            <li node-type="move-node">
+                <div node-type='node-co'>
+                    <span>测试测试2</span>
+                    <span class="move-btn">移动</span>
+                </div>
+                <div class="del-btn" node-type="del-btn">移除2</div>
+            </li>
+            <li node-type="move-node">
+                <div node-type='node-co'>
+                    <span>测试测试3</span>
+                    <span class="move-btn">移动</span>
+                </div>
+                <div class="del-btn" node-type="del-btn">移除3</div>
+            </li>
+            <li node-type="move-node">
+                <div node-type='node-co'>
+                    <span>测试测试4</span>
+                    <span class="move-btn">移动</span>
+                </div>
+                <div class="del-btn" node-type="del-btn">移除4</div>
+            </li>
+        </ul>
+    </div>
+    <button type="" class="edit-btn">编辑</button>
+    <button type="" class="cancel-btn">取消</button>
     <script src="my.js"></script>
 </body>
+
 </html>
