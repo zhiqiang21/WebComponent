@@ -31,7 +31,7 @@
         document.getElementById("uploadPreview").src = oFREvent.target.result;
         qrcode.decode(oFREvent.target.result);
         qrcode.callback = function(data) {
-            $('.qrcode-txt').val(data)
+            $('.qrcode-txt').html(data);
             console.log(data);
         };
 
@@ -56,7 +56,7 @@
 <img id="uploadPreview" style="width: 100px; height: 100px;" src="" alt="Image preview" />
 <input id="uploadImage" type="file" name="myPhoto" onchange="loadImageFile();" />
 
-二维码的信息：<<span class="qrcode-txt"></span>
+二维码的信息：<span class="qrcode-txt"></span>
 </body>
 
 </html>
