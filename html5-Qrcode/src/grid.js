@@ -1,8 +1,8 @@
 /*
-  Ported to JavaScript by Lazar Laszlo 2011 
-  
+  Ported to JavaScript by Lazar Laszlo 2011
+
   lazarsoft@gmail.com, www.lazarsoft.info
-  
+
 */
 
 /*
@@ -94,7 +94,7 @@ GridSampler.checkAndNudgePoints=function( image,  points)
 				}
 			}
 		}
-	
+
 
 
 GridSampler.sampleGrid3=function( image,  dimension,  transform)
@@ -147,6 +147,6 @@ GridSampler.sampleGrid3=function( image,  dimension,  transform)
 GridSampler.sampleGridx=function( image,  dimension,  p1ToX,  p1ToY,  p2ToX,  p2ToY,  p3ToX,  p3ToY,  p4ToX,  p4ToY,  p1FromX,  p1FromY,  p2FromX,  p2FromY,  p3FromX,  p3FromY,  p4FromX,  p4FromY)
 {
 	var transform = PerspectiveTransform.quadrilateralToQuadrilateral(p1ToX, p1ToY, p2ToX, p2ToY, p3ToX, p3ToY, p4ToX, p4ToY, p1FromX, p1FromY, p2FromX, p2FromY, p3FromX, p3FromY, p4FromX, p4FromY);
-			
+
 	return GridSampler.sampleGrid3(image, dimension, transform);
 }

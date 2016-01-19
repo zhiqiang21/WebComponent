@@ -5,58 +5,28 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>二维码扫描</title>
-    <script src="src/grid.js"></script>
-    <script src="src/version.js"></script>
-    <script src="src/detector.js"></script>
-    <script src="src/formatinf.js"></script>
-    <script src="src/errorlevel.js"></script>
-    <script src="src/bitmat.js"></script>
-    <script src="src/datablock.js"></script>
-    <script src="src/bmparser.js"></script>
-    <script src="src/datamask.js"></script>
-    <script src="src/rsdecoder.js"></script>
-    <script src="src/gf256poly.js"></script>
-    <script src="src/gf256.js"></script>
-    <script src="src/decoder.js"></script>
-    <script src="src/qrcode.js"></script>
-    <script src="src/findpat.js"></script>
-    <script src="src/alignpat.js"></script>
-    <script src="src/databr.js"></script>
+    <link rel="stylesheet" type="text/css" href="lib/my.css">
+    <script src="lib/qrcode.js"></script>
     <script src="lib/zepto.js"></script>
-    <script>
-    var oFReader = new FileReader();
-    var rFilter = /^(?:image\/bmp|image\/cis\-cod|image\/gif|image\/ief|image\/jpeg|image\/jpeg|image\/jpeg|image\/pipeg|image\/png|image\/svg\+xml|image\/tiff|image\/x\-cmu\-raster|image\/x\-cmx|image\/x\-icon|image\/x\-portable\-anymap|image\/x\-portable\-bitmap|image\/x\-portable\-graymap|image\/x\-portable\-pixmap|image\/x\-rgb|image\/x\-xbitmap|image\/x\-xpixmap|image\/x\-xwindowdump)$/i;
-
-    oFReader.onload = function(oFREvent) {
-        document.getElementById("uploadPreview").src = oFREvent.target.result;
-        qrcode.decode(oFREvent.target.result);
-        qrcode.callback = function(data) {
-            $('.qrcode-txt').html(data);
-            console.log(data);
-        };
-
-        qrcode.callback();
-    };
-
-    function loadImageFile() {
-        if (document.getElementById("uploadImage").files.length === 0) {
-            return;
-        }
-        var oFile = document.getElementById("uploadImage").files[0];
-        if (!rFilter.test(oFile.type)) {
-            alert("You must select a valid image file!");
-            return;
-        }
-        oFReader.readAsDataURL(oFile);
-    }
-    </script>
 </head>
 
-<body >
-<img id="uploadPreview" style="width: 100px; height: 100px;" src="" alt="Image preview" />
-<input id="uploadImage" type="file" name="myPhoto" onchange="loadImageFile();" />
-
-二维码的信息：<span class="qrcode-txt"></span>
+<body>
+    <div>
+        <div class="qr-btn" node-type="qr-btn">扫描二维码1
+            <input node-type="jsbridge" type="file" name="myPhoto" value="扫描二维码1" />
+        </div>
+    </div>
+    <div>
+        <div class="qr-btn" node-type="qr-btn">扫描二维码2
+            <input node-type="jsbridge" type="file" name="myPhoto" value="扫描二维码2" />
+        </div>
+    </div>
+    <script src="lib/my.js"></script>
+    <script>
+    $(function() {
+        Qrcode.init($('[node-type=jsbridge]'));
+    });
+    </script>
 </body>
 
 </html>
