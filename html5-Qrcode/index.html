@@ -9,15 +9,15 @@
 </head>
 
 <body>
-    <div node-type="qr-content">
+    <div>
         <div class="qr-btn" node-type="qr-btn">扫描二维码1
+            <input node-type="jsbridge" type="file" name="myPhoto" value="扫描二维码1" />
         </div>
-        <input node-type="jsbridge" type="file" name="myPhoto" value="扫描二维码1" />
     </div>
-    <div node-type="qr-content">
+    <div>
         <div class="qr-btn" node-type="qr-btn">扫描二维码2
+            <input node-type="jsbridge" type="file" name="myPhoto" value="扫描二维码2" />
         </div>
-        <input node-type="jsbridge" type="file" name="myPhoto" value="扫描二维码2" />
     </div>
     <div class="result-qrcode">
     </div>
@@ -27,7 +27,7 @@
     <script>
     //初始化扫描二维码按钮，传入自定义的 node-type 属性
     $(function() {
-        Qrcode.init($('[node-type=qr-content]'));
+        Qrcode.init($('[node-type=qr-btn]'));
     });
     </script>
 </body>

@@ -27,12 +27,16 @@
 ```
 
 **2.**自定义按钮的 html 样式
-因为该插件需要使用`<input type="file" />` ，该 html 结构在网页上面是有固定的显示样式，为了能够自定义按钮样式，我们可以按照下面的示例代码结构嵌套代码
+为自定义的按钮添加自定义属性，属性名称为`node-type`
+为 input 按钮添加自定义的属性, 属性名称为`node-type`
+
+>因为该插件需要使用`<input type="file" />` ，该 html 结构在网页上面是有固定的显示样式，为了能够自定义按钮样式，我们可以按照下面的示例代码结构嵌套代码
 
 ```html
-    <div node-type="qr-content">
-        <div class="qr-btn" node-type="qr-btn">扫描二维码1</div>
-        <input node-type="jsbridge" type="file" name="myPhoto" value="扫描二维码1" />
+    <div>
+        <div class="qr-btn" node-type="qr-btn">扫描二维码1
+            <input node-type="jsbridge" type="file" name="myPhoto" value="扫描二维码1" />
+        </div>
     </div>
 ```
 
@@ -51,6 +55,6 @@ input[node-type=jsbridge]{
 ```javascript
     //初始化扫描二维码按钮，传入自定义的 node-type 属性
     $(function() {
-        Qrcode.init($('[node-type=qr-content]'));
+        Qrcode.init($('[node-type=qr-btn]'));
     });
 ```
