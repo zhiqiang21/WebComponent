@@ -1,25 +1,63 @@
 (function($) {
-
     var Qrcode = function(tempBtn) {
-        if (window.WeiboJSBridge) {
-            $(tempBtn).on('click', this.weiBoBridge);
+        var _this_ = this;
+        var isWeiboWebView = /__weibo__/.test(navigator.userAgent);
+
+        if (isWeiboWebView) {
+            if (window.WeiboJSBridge) {
+                _this_.bridgeReady(tempBtn);
+            } else {
+                document.addEventListener('WeiboJSBridgeReady', function() {
+                    _this_.bridgeReady(tempBtn);
+                });
+            }
         } else {
-            $(tempBtn).on('change', this.getImgFile);
+            _this_.nativeReady(tempBtn);
         }
     };
 
     Qrcode.prototype = {
+        nativeReady: function(tempBtn) {
+            var btn = $('[node-type=qr-btn]', tempBtn);
+            var inputBtn = $(tempBtn).find('input[node-type=jsbridge]');
+
+            $(btn).bind('click', function() {
+                $(inputBtn).trigger('click');
+            });
+            inputBtn.change(this.getImgFile);
+
+            // $('[node-type=jsbridge]',tempBtn).on('click',function(e){
+            //     // e.stopPropagation();
+            //     // return false;
+            // });
+
+            // $(tempBtn).bind('click',function(e){
+            //     $(this).find('input').trigger('click');
+            //     // $(this).find('[node-type=jsbridge]').click(function(e){
+            //     //       e.stopPropagation();
+            //     // });
+            //     // inputBtn.click(function(e){
+            //     //     $(this).click()
+            //     //     e.stopPropagation();
+            //     // });
+
+            // });
+
+            // $(tempBtn).bind('change','[node-type=jsbridge]', this.getImgFile);
+        },
+        bridgeReady: function(tempBtn) {
+            $(tempBtn).bind('click', this.weiBoBridge);
+        },
         weiBoBridge: function() {
-            WeiboJSBridge.invoke('scanQRCode', null, function(params) {
+            window.WeiboJSBridge.invoke('scanQRCode', null, function(params) {
                 //得到扫码的结果
-                location.href=params.result;
+                $('.result-qrcode').append(params.result + '<br/>');
             });
         },
         getImgFile: function() {
             var _this_ = this;
             var imgFile = $(this)[0].files;
             var oFile = imgFile[0];
-
             var oFReader = new FileReader();
             var rFilter = /^(?:image\/bmp|image\/cis\-cod|image\/gif|image\/ief|image\/jpeg|image\/jpeg|image\/jpeg|image\/pipeg|image\/png|image\/svg\+xml|image\/tiff|image\/x\-cmu\-raster|image\/x\-cmx|image\/x\-icon|image\/x\-portable\-anymap|image\/x\-portable\-bitmap|image\/x\-portable\-graymap|image\/x\-portable\-pixmap|image\/x\-rgb|image\/x\-xbitmap|image\/x\-xpixmap|image\/x\-xwindowdump)$/i;
 
@@ -33,10 +71,12 @@
             }
 
             oFReader.onload = function(oFREvent) {
+
                 qrcode.decode(oFREvent.target.result);
                 qrcode.callback = function(data) {
+                    // alert(data)
                     //得到扫码的结果
-                    location.href = data;
+                    $('.result-qrcode').append(data + '<br/>');
                 };
             };
 
@@ -49,13 +89,9 @@
 
     Qrcode.init = function(tempBtn) {
         var _this_ = this;
-        var inputDom;
 
         tempBtn.each(function() {
             new _this_($(this));
-        });
-        $('[node-type=qr-btn]').on('click', function() {
-            $(this).find('[node-type=jsbridge]')[0].click();
         });
     };
     window.Qrcode = Qrcode;

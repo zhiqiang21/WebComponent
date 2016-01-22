@@ -10,6 +10,9 @@
 
 [http://test.qrcode.weibo.com/zhiqiang/WebComponent/html5-Qrcode/](http://test.qrcode.weibo.com/zhiqiang/WebComponent/html5-Qrcode/)
 
+需要配置 hosts :
+`10.210.238.233 test.qrcode.weibo.com`
+
 ### 说明：
 此插件需要配合`zepto.js` 或者 `jQuery.js`使用
 
@@ -27,16 +30,17 @@
 因为该插件需要使用`<input type="file" />` ，该 html 结构在网页上面是有固定的显示样式，为了能够自定义按钮样式，我们可以按照下面的示例代码结构嵌套代码
 
 ```html
-        <div class="qr-btn" node-type="jsbridge">扫描二维码1
-            <input node-type="jsbridge" type="file" name="myPhoto" value="扫描二维码1" />
-        </div>
+    <div node-type="qr-content">
+        <div class="qr-btn" node-type="qr-btn">扫描二维码1</div>
+        <input node-type="jsbridge" type="file" name="myPhoto" value="扫描二维码1" />
+    </div>
 ```
 
 然后设置 `input` 按钮的 `css` 隐藏按钮，比如我使用的是属性选择器
 
 ```css
 input[node-type=jsbridge]{
-    visibility: hidden;
+    display:none;
 }
 ```
 
@@ -47,6 +51,6 @@ input[node-type=jsbridge]{
 ```javascript
     //初始化扫描二维码按钮，传入自定义的 node-type 属性
     $(function() {
-        Qrcode.init($('[node-type=jsbridge]'));
+        Qrcode.init($('[node-type=qr-content]'));
     });
 ```

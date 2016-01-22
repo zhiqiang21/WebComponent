@@ -21,28 +21,33 @@
     border-bottom:1px solid #aeadad;
 }
 
-/*.test li:after{*/
-    /*content:'div';*/
-    /*display: block;*/
-    /*border-top:1px solid #aeadad;*/
-    /*z-index:1000;*/
-/*}*/
 .test .del-btn {
     position: absolute;
     top:0;
     right:0;
-    background-color:#ff4851;
+    z-index:-100;
+    font-size: 0;
+    display:none;
+}
+
+.test .del-btn span{
+    display:inline-block;
     width:60px;
     height:40px;
     line-height:40px;
     text-align: center;
-    z-index:-100;
+    font-size: 20px;
+    color:#fff;
 }
-
+.test .del-btn span:nth-child(1){
+    background-color:#3773fd;
+}
+.test .del-btn span:nth-child(2){
+    background-color:#ff4851;
+}
 
 .test li div:first-child {
     color: #000;
-    background-color:RGBA(254,254,254,1);
     height:40px;
     line-height:40px;
 }
@@ -58,5 +63,19 @@
 }
 .move-style{
     z-index:1000;
-
+    background-color:rgba(255,255,255,.3);
 }
+
+.test_posi{
+    width:300px;
+    height:300px;
+    background-color:#000;
+}
+
+
+
+
+
+
+
+

@@ -5,6 +5,7 @@ var liHeight = $(liList).height();
 var touchResult = new TouchDirection();
 var moveBtnList = $('.move-btn');
 var offsetLi = [];
+var offsetHalf = [];
 
 $.each(liList, function(i, item) {
     $(item).attr('in_v', i);
@@ -115,6 +116,7 @@ function editFunc() {
     moveBtnList.css('display', 'block');
     $.each(liList, function(i, item) {
         offsetLi.push($(item).offset().top);
+        offsetHalf.push($(item).offset().top - liHeight / 2);
     });
 
     $.each(liList, function(i, item) {
@@ -135,7 +137,7 @@ function cancelFunc() {
 
 var moveStartEv = function(e) {
     var that = touchResult.touchStartEven(e);
-    console.log(that);
+
 };
 
 var moveMoveEv = function(e) {
@@ -145,20 +147,20 @@ var moveMoveEv = function(e) {
     var currOffset = currObject.offset().top;
     var direction = that.moveThat.relativeDirc;
     var moveTemp;
+    var upNum = that.moveThat.moveY;
+    var tempIn_v;
+    currObject.addClass('move-style').find('[node-type=node-co]').addClass("move-style");
 
-    currObject.addClass('move-style');
-    console.log(currOffset)
     if (direction === 'up') {
-        var upNum = that.moveThat.moveY;
-        console.log(upNum)
-        var tempIn_v;
-        moveTemp = currOffset - upNum;
+
+        moveTemp = offsetLi[3] - upNum;
 
         $(this).parents('[node-type=move-node]').css({
             'top': moveTemp + 'px'
         });
+        console.log(currOffset);
 
-        if (upNum >= liHeight / 2) {
+        if (currOffset >= offsetHalf[currLiIndex]) {
             tempIn_v = currObject.attr('in_v');
             currObject.attr('in_v', currObject.prev().attr('in_v'));
             currObject.prev().attr('in_v', tempIn_v);
@@ -178,12 +180,15 @@ var moveEndEv = function(e) {
     var that = touchResult.touchEndEven(e);
     var currMoveLi = $(this).parents('[node-type=move-node]');
     var currLiIn_v = currMoveLi.attr('in_v');
-    currMoveLi.css('top', offsetLi[currLiIn_v]);
-    $.each(liList, function(i, item) {
-        //$(item).removeAttr('style');
-        $(item).removeClass('move-style');
-    });
-    console.log(that);
+    // currMoveLi.css('top', offsetLi[currLiIn_v]);
+    // $.each(liList, function(i, item) {
+    //     //$(item).removeAttr('style');
+    //     $(item).removeClass('move-style');
+    // });
+};
+
+var transEndFunc = function() {
+    $(this).removeClass("leave-btn");
 };
 
 
@@ -196,3 +201,4 @@ $('.cancel-btn').on('click', cancelFunc);
 $('.test').on('touchstart', '.move-btn', moveStartEv);
 $('.test').on('touchmove', '.move-btn', moveMoveEv);
 $('.test').on('touchend', '.move-btn', moveEndEv);
+$('.test').on('transitionend', '[node-type=node-co]', transEndFunc);
