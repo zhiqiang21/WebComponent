@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-user-modify: read-write-plaintext-only;
+}
+
+.clearfix:after {
+    display: block;
+    height: 0;
+    content: "\200B";
+    clear: both;
+}
+.re-area {
+    margin: 0.8rem 0 0 0;
+    width: 32rem;
+    height: 20.6rem;
+    background: url(../img/reward.png) no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+}
+
+.re-top > span,
+.re-bottom >span {
+    display: inline-block;
+    width: 1.3rem;
+    height: 1.3rem;
+    margin-left: 1.2rem;
+    background: url(../img/light_close.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.light_open {
+    background: url(../img/light.png) no-repeat !important;
+    background-size: 100% 100% !important;
+}
+
+.re-top {
+    position: absolute;
+    width: 100%;
+    top: .4rem;
+}
+
+.re-left {
+    position: absolute;
+    left: 0;
+    top: 1.2rem;
+}
+
+.re-left span,
+.re-right span {
+    margin-top: .8rem;
+    display: block;
+    width: 1.3rem;
+    height: 1.3rem;
+    background: url(../img/light_close.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.re-right {
+    position: absolute;
+    top: 1.2rem;
+    right: .2rem;
+}
+
+.re-bottom {
+    position: absolute;
+    width: 100%;
+    bottom: .4rem;
+}
+
+.re-top span:first-child,
+.re-bottom span:first-child {
+    margin-left: 0;
+}
+
+.re-top span:last-child,
+.re-bottom span:first-child {
+    margin-right: 0;
+}
+
+.re-middle {
+    position: absolute;
+    width: 28.3rem;
+    height: 16rem;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: #f69f75;
+    /*display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;*/
+    color: #ffdece;
+    font-size: 1.8rem;
+}
+
+.row-a,
+.row-b,
+.row-c {
+    height: 5.3rem;
+    /*-webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;*/
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: row nowrap;
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+}
+
+.row-a div,
+.row-b div,
+.row-c div {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    text-align: center;
+    line-height: 5.3rem;
+    background-color: #f69f75;
+    /*position: relative;*/
+    /*-webkit-box-align:center;
+    -webkit-align-items:center;
+        -ms-flex-align:center;
+            align-items:center;*/
+}
+
+.win-prize {
+    z-index: 1000;
+}
+
+.reward-layer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    top: 0;
+    left: 0;
+}
+
+.cover-layer{
+    width:100%;
+    height:100%;
+    top:0;
+    position:absolute;
+    z-index:9999;
+}
+
+.row-a div:first-child {
+    background: url(../img/reward_bg.png) no-repeat;
+    background-size: 100% 100%;
+    color: #fff;
+}
+
+.row-a div:last-child {
+    background-color: #f26d34;
+    color: #fff;
+}
+
+.row-c div:first-child,
+.row-c div:last-child {
+    background-color: #f26d34;
+    color: #fff;
+}
+
+.row-a >div:nth-child(2),
+.row-b >div:nth-child(1),
+.row-b >div:nth-child(3),
+.row-c >div:nth-child(2) {
+    font-size: 1.5rem;
+}
+
+.row-c >div:nth-child(1) {
+    font-size: 2rem;
+}
+
+.row-c >div:nth-child(3) {
+    font-size: 1.6rem;
+}
+
+.row-c >div:nth-child(2) {
+    line-height: 100%;
+    padding-top: 1.4rem;
+}
+
+.reward-btn {
+    position: absolute;
+    width: 13rem;
+    height: 9.2rem;
+    background: url(../img/btn.png) no-repeat;
+    background-size: 100% 100%;
+    z-index: 2000;
+    top: -4px;
+    right: 0;
+    bottom: 0;
+    left: -5px;
+    margin: auto;
+}

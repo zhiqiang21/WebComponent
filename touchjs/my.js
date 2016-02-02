@@ -1,3 +1,57 @@
+$(function ($) {
+    var eventObject = new TouchDirection();
+
+    //上下拖动对象命名
+    var TouchAnimation = function(){
+
+    };
+
+    //左右拖动对象命名
+    var TouchDownUp = function(){};
+
+
+
+    var init = function (btnContent) {
+        var _this_ =this;
+
+        btnContent.each(function(){
+            new _this_($(this));
+        });
+
+        bindEvent(btnContent);
+    };
+
+    var bindEvent = function(btnContent){
+        btnContent.on('click')
+
+        //左右拖动事件绑定
+        btnContent.on('touchstart', 'div', touchStartEv);
+        btnContent.on('touchmove', 'div', touchMoveEv);
+        btnContent.on('touchend', 'div', touchEndEv);
+
+        //上下拖动事件绑定
+        btnContent.on('touchstart', '.move-btn', moveStartEv);
+        btnContent.on('touchmove', '.move-btn', moveMoveEv);
+        btnContent.on('touchend', '.move-btn', moveEndEv);
+        btnContent.on('transitionend', '[node-type=node-co]', transEndFunc);
+
+        //其它事件绑定这里需要按照具体情况来写
+        $('div[node-type=del-btn]').on('click', delLi);
+        $('.edit-btn').on('click', editFunc);
+        $('.cancel-btn').on('click', cancelFunc);
+    };
+
+    TouchAnimation.init = init;
+    TouchDownUp.init = init;
+
+    window.TouchAnimation = TouchAnimation;
+    window.TouchDownUp = TouchDownUp;
+
+})(window.Zepto ? Zepto :jQuery);
+
+
+
+
 var btnWidth = $('div[node-type=del-btn]').width();
 var liFather = $('div[node-type=test]');
 var liList = liFather.find('[node-type=move-node]');
@@ -192,13 +246,3 @@ var transEndFunc = function() {
 };
 
 
-$('.test').on('touchstart', 'div', touchStartEv);
-$('.test').on('touchmove', 'div', touchMoveEv);
-$('.test').on('touchend', 'div', touchEndEv);
-$('div[node-type=del-btn]').on('click', delLi);
-$('.edit-btn').on('click', editFunc);
-$('.cancel-btn').on('click', cancelFunc);
-$('.test').on('touchstart', '.move-btn', moveStartEv);
-$('.test').on('touchmove', '.move-btn', moveMoveEv);
-$('.test').on('touchend', '.move-btn', moveEndEv);
-$('.test').on('transitionend', '[node-type=node-co]', transEndFunc);

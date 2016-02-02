@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>跑马灯</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+
+<body>
+    <div class="re-area" node-type="reward-area" data-setting='{
+    "liAutoPlay":false ,
+    "roLiSpeed":100,
+    "roPrSpeed":200,
+    "liDirection":true,
+    "randomPrize":false}'>
+        <div class="re-top" node-type="re-top">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="re-left" node-type="re-left">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="re-right" node-type="re-right">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="re-bottom" node-type="re-bottom">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="re-middle">
+            <div class="row-a" node-type="row-a">
+                <div grade-value="1">mac pro</div>
+                <div grade-value="3">扫地机器人</div>
+                <div grade-value="2">iphone6s</div>
+            </div>
+            <div class="row-b" node-type="row-b">
+                <div grade-value="8">20积分</div>
+                <div grade-value=""></div>
+                <div grade-value="7">优惠券</div>
+            </div>
+            <div class="row-c" node-type="row-c">
+                <div grade-value="4">ps4</div>
+                <div grade-value="5">
+                    <p>猴年限定</p>公仔</div>
+                <div grade-value="6">祝福红包</div>
+            </div>
+            <div node-type="reward-layer"></div>
+        </div>
+        <div class="reward-btn" node-type="reward_btn"></div>
+        <div node-type="cover_layer"></div>
+    </div>
+
+    <div class="re-area" node-type="reward-area" data-setting='{
+    "liAutoPlay":false ,
+    "roLiSpeed":100,
+    "roPrSpeed":200,
+    "liDirection":true,
+    "randomPrize":false}'>
+        <div class="re-top" node-type="re-top">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="re-left" node-type="re-left">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="re-right" node-type="re-right">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="re-bottom" node-type="re-bottom">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="re-middle">
+            <div class="row-a" node-type="row-a">
+                <div grade-value="1">mac pro</div>
+                <div grade-value="3">扫地机器人</div>
+                <div grade-value="2">iphone6s</div>
+            </div>
+            <div class="row-b" node-type="row-b">
+                <div grade-value="8">20积分</div>
+                <div grade-value=""></div>
+                <div grade-value="7">优惠券</div>
+            </div>
+            <div class="row-c" node-type="row-c">
+                <div grade-value="4">ps4</div>
+                <div grade-value="5">
+                    <p>猴年限定</p>公仔</div>
+                <div grade-value="6">祝福红包</div>
+            </div>
+            <div node-type="reward-layer"></div>
+        </div>
+        <div class="reward-btn" node-type="reward_btn"></div>
+        <div node-type="cover_layer"></div>
+    </div>
+    <script src="js/jquery-1.8.0.js"></script>
+    <script src="js/index.js"></script>
+    <script>
+    $(function() {
+        window.LightRotate.init($('[node-type=reward-area]'));
+    });
+    </script>
+</body>
+
+</html>
