@@ -1,6 +1,6 @@
-(function($) {
+(function ($) {
 
-    var LightRotate = function(select) {
+    var LightRotate = function (select) {
         var _this = this;
         this.LightArea = select;
         //获取外围的灯
@@ -22,11 +22,11 @@
         this.coverLayer = $('[node-type=cover_layer]', select);
 
         this.setting = {
-            liAutoPlay: false, //周围的灯是否自动旋转
-            roLiSpeed: 100, //灯旋转的速度ms
-            roPrSpeed: 200, //奖品旋转速度ms
-            liDirection: true, //旋转方向 true  正方向   false  反方向
-            randomPrize: false //空格是否随机选取
+            liAutoPlay: false,  //周围的灯是否自动旋转
+            roLiSpeed: 100,     //灯旋转的速度ms
+            roPrSpeed: 200,     //奖品旋转速度ms
+            liDirection: true,  //旋转方向 true  正方向   false  反方向
+            randomPrize: false  //空格是否随机选取
         };
 
         $.extend(_this.setting, _this.getSettingUser());
@@ -35,7 +35,7 @@
             _this.liAutoPlay();
         }
 
-        $(_this.LightArea).on('click', '[node-type=reward_btn]', function() {
+        $(_this.LightArea).on('click', '[node-type=reward_btn]', function () {
             _this.initParams();
             _this.openCoverLayer();
             _this.openRewardLayer();
@@ -44,19 +44,17 @@
             _this.prizeRun();
 
             _this.sendPrizeAjax();
-
-
         });
 
     };
 
 
     LightRotate.prototype = {
-        liAutoPlay: function() {
+        liAutoPlay: function () {
             //灯是否自动播放
             this.lightRun();
         },
-        getLightList: function() {
+        getLightList: function () {
             var lightList = [];
             var bottomRever;
             var leftRever;
@@ -73,7 +71,7 @@
                 return lightList.reverse();
             }
         },
-        getPrizeList: function() {
+        getPrizeList: function () {
             var prizeList = [];
             var bottomPrize = Array.from(this.rowC).reverse();
 
@@ -84,14 +82,14 @@
 
             return prizeList;
         },
-        lightRun: function() {
+        lightRun: function () {
             var _this = this;
 
             function tempFunc() {
                 var lightList = _this.getLightList();
                 var lightLength = lightList.length;
                 var i = 0;
-                return function() {
+                return function () {
 
                     $(lightList, _this.LightArea).removeClass('light_open');
                     $(lightList[i], _this.LightArea).addClass("light_open");
@@ -108,36 +106,40 @@
             lightRunFunc();
             _this.lightInterVal = setInterval(lightRunFunc, _this.setting.roLiSpeed);
         },
-        prizeRun: function() {
+        prizeRun: function () {
             var _this = this;
 
             function tempFunc() {
                 var prizeList = _this.getPrizeList();
                 var prizeLength = prizeList.length;
                 var i = 0;
-                return function() {
-                        $(prizeList, _this.LightArea).removeClass('win-prize');
-                        $(prizeList[i], _this.LightArea).addClass("win-prize");
-                        console.log(i);
-                        if (Number($(prizeList[i]).attr('grade-value'), _this.LightArea) === _this.prizeGradeId) {
-                            // stopAnimation = true;
-                            _this.closeAnimation();
-                            _this.showResult(_this.prizeGradeId);
-                        }
+                return function () {
+                    $(prizeList, _this.LightArea).removeClass('win-prize');
+                    $(prizeList[i], _this.LightArea).addClass("win-prize");
 
-                        i++;
-                        //使一轮循环结束后能够继续下次循环
-                        if (i === prizeLength) {
-                            i = 0;
-                        }
+                    if (Number($(prizeList[i], _this.LightArea).attr('grade-value')) === _this.prizeGradeId) {
+                        // stopAnimation = true;
+                        _this.closeAnimation();
+                        _this.showResult(_this.prizeGradeId);
+                    }
+
+                    i++;
+                    //使一轮循环结束后能够继续下次循环
+                    if (i === prizeLength) {
+                        i = 0;
+                    }
                 };
             }
 
             var prizeRunFunc = tempFunc();
-            prizeRunFunc();
+            // prizeRunFunc();
             _this.prizeInterVal = setInterval(prizeRunFunc, _this.setting.roPrSpeed);
+            // _this.prizeInterVal=setTimeout(function() {
+            //     prizeRunFunc();
+            //     setTimeout(arguments.callee, _this.setting.roPrSpeed);
+            // }, _this.setting.roPrSpeed);
         },
-        sendPrizeAjax: function() {
+        sendPrizeAjax: function () {
             var _this = this;
             // var data = {
             //     "code": 100004,
@@ -152,7 +154,7 @@
                 }
             };
 
-            setTimeout(function() {
+            setTimeout(function () {
                 _this.requestSuccess(data);
 
             }, 3000);
@@ -171,7 +173,7 @@
             //     });
             // }, 3000);
         },
-        requestSuccess: function(data) {
+        requestSuccess: function (data) {
             if (data.code === 100004) {
                 this.requestFail(data.msg);
             }
@@ -179,39 +181,39 @@
                 this.prizeGradeId = data.data.grade;
             }
         },
-        showResult: function(num) {
+        showResult: function (num) {
             this.closeCoverLayer();
             //根据后端返回的结果显示奖品
             var prizeText = '恭喜您获得了' + $('[grade-value="' + num + '"]', this.LightArea).text();
             alert(prizeText);
         },
-        requestFail: function(data) {
+        requestFail: function (data) {
             this.closeCoverLayer();
             //今天已经抽奖完成
             alert(data);
 
             this.closeAnimation();
         },
-        closeAnimation: function() {
+        closeAnimation: function () {
             clearInterval(this.lightInterVal);
             clearInterval(this.prizeInterVal);
         },
-        openCoverLayer: function() {
+        openCoverLayer: function () {
             this.coverLayer.addClass("cover-layer");
         },
-        closeCoverLayer: function() {
+        closeCoverLayer: function () {
             this.coverLayer.removeClass("cover-layer");
         },
-        openRewardLayer: function() {
+        openRewardLayer: function () {
             this.rewardLayer.addClass('reward-layer');
         },
-        closeRewardLayer: function() {
+        closeRewardLayer: function () {
             this.rewardLayer.removeClass('reward-layer');
         },
-        initParams: function() {
+        initParams: function () {
             this.prizeGradeId = '';
         },
-        getSettingUser: function() {
+        getSettingUser: function () {
             var userSetting = this.LightArea.attr('data-setting');
             if (userSetting && userSetting !== '') {
                 return $.parseJSON(userSetting);
@@ -219,16 +221,16 @@
                 return {};
             }
         },
-        destory: function() {
+        destory: function () {
             $(_this.LightArea).off();
             this.closeAnimation();
             this.rewardTimer = null;
         }
     };
 
-    LightRotate.init = function(select) {
+    LightRotate.init = function (select) {
         var _this = this;
-        select.each(function() {
+        select.each(function () {
             new _this($(this));
         });
     };
