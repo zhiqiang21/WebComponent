@@ -11,7 +11,7 @@
 [http://test.qrcode.weibo.com/zhiqiang/WebComponent/html5-Qrcode/](http://test.qrcode.weibo.com/zhiqiang/WebComponent/html5-Qrcode/)
 
 需要配置 hosts :
-`10.210.238.233 test.qrcode.weibo.com`
+`xx.xxx.xxx.233 test.qrcode.weibo.com`
 
 ### 说明：
 此插件需要配合`zepto.js` 或者 `jQuery.js`使用
