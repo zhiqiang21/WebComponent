@@ -20,6 +20,12 @@
 
 #### 3.lazy-load-img
 
+**功能：**
+
+能够实现手机端图片的按需加载，减少图片一次性加载的网络带宽开销。增加页面的加载速度和用户体验。
+具体使用方法和参看**[说明文档](https://github.com/zhiqiang21/WebComponent/tree/master/lazy-load-img)**
+
+
 #### 4.touchjs
 
 #### 5.dragselect
