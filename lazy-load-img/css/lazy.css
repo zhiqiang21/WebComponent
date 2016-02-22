@@ -1,0 +1,22 @@
+*{
+    margin:0;
+    padding:0;
+}
+.clearfix:after {
+    display: block;
+    height: 0;
+    content: "\200B";
+    clear: both;
+}
+.href-block img{
+    width: 180px;
+    height:180px;
+}
+
+.content-left ,.content-right{
+    float:left;
+}
+
+.content-right{
+    margin-left:15px;
+}
