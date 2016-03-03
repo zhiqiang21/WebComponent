@@ -26,7 +26,7 @@
 
 #### 使用方法：
 
-1. 首先页面中引入**`testdemo_revaluation/js/zepto-slider.js`** 文件
+**1.** 首先页面中引入**`testdemo_revaluation/js/zepto-slider.js`** 文件
 
 示例代码：
 ```html
@@ -34,7 +34,7 @@
 <script type="text/javascript" src="js/zepto-slider.js"></script>
 ```
 
-2. 配置容器(图片和按钮)节点,添加自定义属性` node-type="slider-contenter" `和自定义配置属性`user-setting`
+**2.** 配置容器(图片和按钮)节点,添加自定义属性` node-type="slider-contenter" `和自定义配置属性`user-setting`
 
 示例代码：
 ```html
@@ -48,7 +48,7 @@
 }'>
 
 ```
-3. 图片容器配置属性`node-type="img-contenter"`，并且为图片的列表元素添加自定义属性`node-type="img-list"`
+**3.** 图片容器配置属性`node-type="img-contenter"`，并且为图片的列表元素添加自定义属性`node-type="img-list"`
 
 示例代码：
 ```html
@@ -57,14 +57,14 @@
 </li>
 ```
 
-4. 按钮容器配置属性`node-type="btn-contenter"`，并且为按钮所在列表添加自定义属性`node-type="btn-list"`
+**4.** 按钮容器配置属性`node-type="btn-contenter"`，并且为按钮所在列表添加自定义属性`node-type="btn-list"`
 
 示例代码：
 ```html
 <li node-type="btn-list"><a class="li-href" href="#">2</a></li>
 ```
 
-5. 在插件所在的 html 页面初始化 slider
+**5.** 在插件所在的 html 页面初始化 slider
 
 示例代码：
 
