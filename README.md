@@ -25,13 +25,13 @@
 - 支持移动端触摸切换
 - 支持移动端的 sweep
 
-具体使用方法，参看**[说明文档](https://github.com/zhiqiang21/WebComponent/tree/master/Myslider/README.md)**
+具体使用方法，参看**[说明文档](https://github.com/zhiqiang21/WebComponent/blob/master/MySlider/README.md)**
 
 **预览：**
 
 **gif 生成图片问题，不清晰，建议下载源码查看**
 
-![预览效果](myslider/testdemo_revaluation/img/test.gif)
+![预览效果](https://github.com/zhiqiang21/WebComponent/tree/master/MySlider/testdemo_revaluation/img/test.gif)
 
 
 #### 3.lazy-load-img
