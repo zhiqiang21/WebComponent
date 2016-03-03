@@ -31,7 +31,7 @@
 
 **gif 生成图片问题，不清晰，建议下载源码查看**
 
-![预览效果](https://github.com/zhiqiang21/WebComponent/tree/master/MySlider/testdemo_revaluation/img/test.gif)
+![预览效果](http://img.blog.csdn.net/20160303200325891)
 
 
 #### 3.lazy-load-img
