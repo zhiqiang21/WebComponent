@@ -266,6 +266,7 @@ a {
     float: left;
     margin-left: 10px;
     border-radius: 50% 50%;
+    display: none;
 }
 
 .slider-btn li:first-child {
