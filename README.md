@@ -15,6 +15,7 @@
 
 具体使用方法，参看**[说明文档](https://github.com/zhiqiang21/WebComponent/tree/master/html5-Qrcode/README.md)**
 
+----
 #### 2.myslider
 
 ** 特点：**
@@ -33,7 +34,7 @@
 
 ![预览效果](http://img.blog.csdn.net/20160303200325891)
 
-
+----
 #### 3.lazy-load-img
 
 **功能：**
@@ -41,12 +42,11 @@
 能够实现手机端图片的按需加载，减少图片一次性加载的网络带宽开销。增加页面的加载速度和用户体验。
 具体使用方法和参看**[说明文档](https://github.com/zhiqiang21/WebComponent/tree/master/lazy-load-img)**
 
+----
+#### 4.dragselect
 
-#### 4.touchjs
-
-#### 5.dragselect
-
-#### 6.light-rotate
+----
+#### 5.light-rotate
 **预览：**
 
 ![插件预览效果](light-rotate/img/2016-02-02 15_18_46.gif)
