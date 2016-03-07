@@ -253,7 +253,7 @@
             }
         },
 
-        //因为滑动过半或者是不过半，返回的时间都应该是做一次完整动画的一半时间
+        //因为滑动过半或者是不过半，返回的时间都应该至少是是做一次完整动画的一半时间
         originRight: function() {
             this.imgUlConter.animate({
                 'translate3d': '0,0,0'
