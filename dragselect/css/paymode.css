@@ -1,0 +1,101 @@
+@charset "utf-8";
+html {
+    font-size: 62.5%;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #f2f2f2;
+}
+.paymode-tip {
+    margin: 1.4rem 0 0 1.2rem;
+    font-size: 1.4rem;
+    color: #8b8b8b;
+}
+.paymode {
+    background-color: #fff;
+    margin-top: .6rem;
+    position: relative;
+}
+.content {
+    width: 320px;
+    z-index: 1000;
+    background-color:#fff;
+    position:relative;
+    /*margin-left:-80px;*/
+}
+.content >span:first-child {
+    margin-left: 1.2rem;
+}
+.content> span:last-child {
+    float: right;
+    margin-right: 1.5rem;
+    width: 2.4rem;
+    display: inline-block;
+    padding-top: 2rem;
+}
+.paymode-list {
+    position: relative;
+    font-size: 1.6rem;
+    height: 5rem;
+    border-top: 1px solid #e6e6e6;
+    line-height: 5rem;
+    width: 100%;
+}
+.paymode > div.paymode-list:nth-child(2) {
+    top: 5rem;
+}
+.paymode > div.paymode-list:nth-child(3) {
+    top: 10rem;
+}
+.paymode > div.paymode-list:nth-child(4) {
+    top: 15rem;
+}
+.paymode-list-btn:not(:first-child) {
+    margin-top: .2rem;
+}
+.paymode-list-btn {
+    width: 2.4rem;
+    display: block;
+    border-top: 1px solid #c7c7cc;
+}
+.paymode-list.move-currdom {
+    border-top: 1px solid #e6e6e6;
+    background-color: #fff;
+    width: 100%;
+    z-index: 1000;
+    color: #000;
+}
+.del-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    /*z-index: -100;*/
+    font-size: 0;
+    /*display:none;*/
+    height: 5rem;
+}
+.del-btn span {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 15px;
+    color: #fff;
+}
+.del-btn span:nth-child(1) {
+    background-color: #3773fd;
+}
+.del-btn span:nth-child(2) {
+    background-color: #ff4851;
+}
+.paymode ul:last-child {
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.leave-btn{
+    transition:transform .1s ease-in;
+}

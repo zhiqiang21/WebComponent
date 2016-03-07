@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>支付账户选择</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/paymode.css" />
+</head>
+
+<body>
+    <div class="paymode" node-type="pay-mode">
+        <ul>
+            <li class="paymode-list" node-type="paymode-list">
+                <div class="content" node-type="node-co">
+                    <span>心支付方式ApplePay1</span>
+                    <span>
+                        <i class="paymode-list-btn"></i>
+                        <i class="paymode-list-btn"></i>
+                        <i class="paymode-list-btn"></i>
+                    </span>
+                </div>
+                <div class="del-btn" node-type="del-btn">
+                    <span>添加1</span>
+                    <span>移除1</span>
+                </div>
+            </li>
+            <li class="paymode-list" node-type="paymode-list">
+                <div class="content" node-type="node-co">
+                    <span>心支付方式ApplePay2</span>
+                    <span>
+                        <i class="paymode-list-btn"></i>
+                        <i class="paymode-list-btn"></i>
+                        <i class="paymode-list-btn"></i>
+                    </span>
+                </div>
+                <div class="del-btn" node-type="del-btn">
+                    <span>添加2</span>
+                    <span>移除3</span>
+                </div>
+            </li>
+            <li class="paymode-list" node-type="paymode-list">
+                <div class="content" node-type="node-co">
+                    <span>心支付方式ApplePay3</span>
+                    <span>
+                        <i class="paymode-list-btn"></i>
+                        <i class="paymode-list-btn"></i>
+                        <i class="paymode-list-btn"></i>
+                    </span>
+                </div>
+                <div class="del-btn" node-type="del-btn">
+                    <span>添加3</span>
+                    <span>移除3</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="paymode-tip">将按照以上顺序优先扣款</div>
+    <script src="common/zepto.js"></script>
+    <script src="js/dragselect.js"></script>
+    <script>
+        $(function(){
+            window.SelectDrag.init($('[node-type=pay-mode]'));
+        });
+    </script>
+</body>
+
+</html>
