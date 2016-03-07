@@ -86,6 +86,7 @@
         //向右
         moveRight: function() {
 
+
         },
         //向左滑动
         moveLeft: function() {
