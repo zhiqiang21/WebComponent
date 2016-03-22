@@ -1,3 +1,15 @@
+<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+
+		- [WebComponents](#webcomponents)
+		- [插件目录：](#插件目录)
+			- [1.html5-qrcode](#1html5-qrcode)
+			- [2.myslider](#2myslider)
+			- [3.lazy-load-img](#3lazy-load-img)
+			- [4.dragselect](#4dragselect)
+			- [5.light-rotate](#5light-rotate)
+
+<!-- /TOC -->
+
 ### WebComponents
 ----
 人是具有思想的动物。就算是很小的一件事情，多多少少都会有一些感触吧。当然写这些插件我也有我的感触：
