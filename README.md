@@ -1,14 +1,4 @@
-<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
-
-		- [WebComponents](#webcomponents)
-		- [插件目录：](#插件目录)
-			- [1.html5-qrcode](#1html5-qrcode)
-			- [2.myslider](#2myslider)
-			- [3.lazy-load-img](#3lazy-load-img)
-			- [4.dragselect](#4dragselect)
-			- [5.light-rotate](#5light-rotate)
-
-<!-- /TOC -->
+[![Build Status](https://travis-ci.org/zhiqiang21/WebComponent.svg?branch=master)](https://travis-ci.org/zhiqiang21/WebComponent)
 
 ### WebComponents
 ----
