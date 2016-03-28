@@ -20,7 +20,7 @@ body {
     position: relative;
 }
 .content {
-    width: 320px;
+    width: 100%;
     z-index: 1000;
     background-color:#fff;
     position:relative;
@@ -61,7 +61,7 @@ body {
     display: block;
     border-top: 1px solid #c7c7cc;
 }
-.paymode-list.move-currdom {
+.paymode-list .move-currdom {
     border-top: 1px solid #e6e6e6;
     background-color: #fff;
     width: 100%;
