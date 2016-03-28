@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/zhiqiang21/WebComponent.svg?branch=master)](https://travis-ci.org/zhiqiang21/WebComponent)
 
-### WebComponents
+
+### WebComponents[![Build Status](https://travis-ci.org/zhiqiang21/WebComponent.svg?branch=master)](https://travis-ci.org/zhiqiang21/WebComponent)
 ----
 人是具有思想的动物。就算是很小的一件事情，多多少少都会有一些感触吧。当然写这些插件我也有我的感触：
 >我能写插件，不代表我就很厉害。这代表的仅仅是一个方面。那什么叫“厉害”或者是“牛逼”呢？是炫酷的功能么？我觉的不是，这也许代表个人的思想丰富(有创意)而已。难道是严谨的代码结构？我觉的也不是，代码写的好，严谨，扩展性强，这也只能代表个人技术能力强？那么所谓的“厉害”和“牛逼”是什么呢？阿基米德说过，**“给我一个杠杆，我就能撬动地球”**。重要的不是“杠杆”，而是那个撬动地球的“IDEA”。所以，**能写插件不是最重要的，而是在写插件过程中解决问题的“IDEA”**。
@@ -34,7 +34,7 @@
 
 **gif 生成图片问题，不清晰，建议下载源码查看**
 
-![预览效果](http://img.blog.csdn.net/20160303200325891)
+![预览效果](http://ww1.sinaimg.cn/large/698e22a9jw1f2cdnw4jgyg20pl0es7wh.gif)
 
 ----
 #### 3.lazy-load-img
