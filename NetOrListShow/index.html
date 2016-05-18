@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="change-btn">
+    	<span class="net-btn">网状</span>
+    	<span class="list-btn">列表</span>
+    </div>
+    <div>
+        <ul class="item-content">
+            <li class="item-list ">0</li>
+            <li class="item-list ">1</li>
+            <li class="item-list">2</li>
+            <li class="item-list">3</li>
+            <li class="item-list ">4</li>
+            <li class="item-list ">5</li>
+            <li class="item-list">6</li>
+            <li class="item-list">7</li>
+        </ul>
+    </div>
+    <script src="js/zepto.min.js"></script>
+    <script src="js/transform.js"></script>
+    <script>
+    	$(function($){
+    		window.blockTransform.init($('.item-list'));
+    	});
+    </script>
+</body>
+
+</html>
