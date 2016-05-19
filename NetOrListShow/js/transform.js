@@ -2,6 +2,7 @@
 (function($) {
     var BlockTransform = function(temp) {
 
+
         var _this = this;
         var oddArray = [],
             evenArray = [],
@@ -20,16 +21,16 @@
         this.evenArray = $(evenArray);
 
         //Bind Event Function
-        $('.change-btn').on('click', '.net-btn', function(){
-        	$('.list-btn').attr('hit',true);
-        	_this.netCallBack.call(_this);
+        $('.change-btn').on('click', '.net-btn', function() {
+            $('.list-btn').attr('hit', true);
+            _this.netCallBack.call(_this);
         });
         $('.change-btn').on('click', '.list-btn', function() {
             var clickBtn = $(this),
                 isNotClick = clickBtn.attr('hit');
-            if(true.toString()===isNotClick){
-            	_this.listCallBack.call(_this);
-            	clickBtn.attr('hit',false);
+            if (true.toString() === isNotClick) {
+                _this.listCallBack.call(_this);
+                clickBtn.attr('hit', false);
             }
         });
     }
@@ -64,6 +65,9 @@
                 $('.item-list').removeClass('trans-odd').removeClass('trans-even').removeClass('top-move').removeAttr('style');
 
             }, 1100);
+        },
+        destoryFunc: function() {
+            $('.change-btn').off();
         }
     }
 

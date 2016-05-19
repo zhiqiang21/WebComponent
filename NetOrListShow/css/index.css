@@ -15,16 +15,16 @@ li {
 }
 
 .change-btn{
-	font-size:0;
+    font-size:0;
 }
 .net-btn,
 .list-btn {
     width:100px;
-	height:100px;
-	line-height:100px;
-	text-align:center;
-	font-size:20px;
-	display:inline-block;
+    height:100px;
+    line-height:100px;
+    text-align:center;
+    font-size:20px;
+    display:inline-block;
     background-color: #c12bf9;
 }
 
@@ -57,18 +57,21 @@ ul >li:nth-child(4),ul >li:nth-child(8) {
 
 
 .trans-odd{
-	width:50%;
-	transition: width ease-in .4s;
+    width:50%;
+    transition: width ease-in .4s;
 }
 
 .trans-even {
-    transform: translate3d(100%, 0, 0);
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
     width: 50%;
+    transition: -webkit-transform ease-in .5s;
     transition: transform ease-in .5s;
+    transition: transform ease-in .5s, -webkit-transform ease-in .5s;
 }
 
 
 .top-move{
-	margin-top:-100px;
-	transition:margin-top ease-in .5s;
+    margin-top:-100px;
+    transition:margin-top ease-in .5s;
 }

@@ -1,0 +1,18 @@
+*{margin:0;padding:0;}
+
+.top{
+
+}
+
+.bottom{
+	width:100px;
+	height:80px;
+	border:2px solid #000;
+	-webkit-transform:rotatez(180deg);
+	        transform:rotatez(180deg);
+}
+
+
+@keyframes threeTransform {
+	
+}

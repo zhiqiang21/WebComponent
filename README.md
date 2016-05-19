@@ -72,7 +72,7 @@
 
 **[点击查看说明文档](https://github.com/zhiqiang21/WebComponent/tree/master/JsNameSpaceManage/README.md)**
 
-#### **NetOrListShow(仿app store 商品网状列表动态切换插件)**
+#### **7.NetOrListShow(仿app store 商品网状列表动态切换插件)**
 
 **Gif 截图导致动画有些丢帧，请下载源码运行查看**
 
