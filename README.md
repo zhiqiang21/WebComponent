@@ -74,6 +74,10 @@
 
 #### **7.NetOrListShow(仿app store 商品网状列表动态切换插件)**
 
-**Gif 截图导致动画有些丢帧，请下载源码运行查看**
+**App Store 动画示例**
+![](http://ww1.sinaimg.cn/large/698e22a9jw1f4ei3lryb0g20bp0gz4qp.gif)
+
+
+**Demo 动画示例（Gif 截图导致动画有些丢帧，请下载源码运行查看）**
 
 ![](http://ww2.sinaimg.cn/large/698e22a9gw1f3zgw584l9g20df0joq4p.gif)
