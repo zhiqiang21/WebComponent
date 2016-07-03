@@ -1,6 +1,7 @@
 # **WebComponents**[![Build Status](https://travis-ci.org/zhiqiang21/WebComponent.svg?branch=master)](https://travis-ci.org/zhiqiang21/WebComponent)
 
---------------------------------------------------------------------------------
+## **欢迎star 欢迎ISSUE，您的鼓励会是我写作的动力！**
+
 
 # **插件列表：**
 
