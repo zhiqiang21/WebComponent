@@ -1,0 +1,26 @@
+@charset "UTF-8";
+*{ margin:0;padding: 0;}
+
+
+.item-animate-1,.item-animate-2,.item-animate-3,.item-animate-4{
+    background-color:rgba(0,0,0,0.7);
+    height: 40px;
+    width: 100px;
+    color:#fff;
+    line-height:40px;
+    border-radius: 4px 4px;
+    text-align: center;
+}
+
+.item-animate-1 span,.item-animate-2 span,.item-animate-3 span,.item-animate-4 span{
+    border-radius: 50% 50%;
+    width:4px;
+    height:4px;
+    display: inline-block;
+    border:1px solid #fff;
+    margin-left:4px;
+}
+
+.curr-check{
+    background-color:#fff;
+}

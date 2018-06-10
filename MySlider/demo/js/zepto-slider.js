@@ -1,4 +1,3 @@
-;
 (function($) {
     var SliderImgFunc = function(imgConter) {
         var _this = this;

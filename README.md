@@ -1,7 +1,7 @@
 # **WebComponents**[![Build Status](https://travis-ci.org/zhiqiang21/WebComponent.svg?branch=master)](https://travis-ci.org/zhiqiang21/WebComponent)
 
 ## **欢迎Star 欢迎ISSUE，您的鼓励会是我写作的动力！**
-如果您有新的功能需求，欢迎 fork 发起 pull request 。如果您没有时间更新，请建立 ISSUE 我会考虑后加入该功能！
+在使用的过程中，如果对插件有新的功能需求，欢迎 fork 发起 pull request 。如果您没有时间更新，请建立 ISSUE 我会考虑后加入该功能！
 
 
 # **插件列表：**
