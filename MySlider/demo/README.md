@@ -2,9 +2,6 @@
 
 #### 目录结构
 
-`TestDemo-old` 该目录下是旧版的 slider 代码
-
-`testdemo_revaluation` 该目录下是新版重构后的代码文件，建议使用该文件下的 js 文件
 
 ----
 **common** 库文件
@@ -26,7 +23,7 @@
 
 #### 使用方法：
 
-**1.** 首先页面中引入**`testdemo_revaluation/js/zepto-slider.js`** 文件
+**1.** 首先页面中引入**`/js/zepto-slider.js`** 文件
 
 示例代码：
 ```html
